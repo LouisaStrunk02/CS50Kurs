@@ -15,7 +15,7 @@ int main(void)
         // for each column
         for (int j = h - 1; j > 1; j--)
         {
-            //print nothing
+            // print nothing
             printf(" ");
         }
 
