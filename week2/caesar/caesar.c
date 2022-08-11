@@ -57,31 +57,3 @@ bool only_digits(string keyinput)
         }
     }
 }
-
-// char rotate(char text[], int k)
-// {
-
-//     for (int i = 0, length = sizeof(text[]) / sizeof(int); i < length; i++)
-//     {
-//         char cipherletter[i];
-//         if (isupper(text[i]))
-//         {
-//             cipherletter[i] = ((text[i] - 'A' + k) % 26 + 'A');
-//             printf("%c", cipherletter[i]);
-//         }
-//         else if (islower(text[i]))
-//         {
-//             cipherletter[i] = ((text[i] - 'a' + k) % 26 + 'a');
-//             printf("%c", cipherletter[i]);
-//         }
-//         else
-//         {
-//             cipherletter[i] = text[i];
-//             printf("%c", cipherletter[i]);
-//         }
-//         // printf("%c\n", cipherletter[i]);
-//         // return (char)cipherletter[i];
-//     }
-//     return 0;
-//     printf("\n");
-// }

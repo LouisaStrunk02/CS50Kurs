@@ -6,9 +6,6 @@
 bool only_alphas(string keyinput);
 string cipher(string text, string k);
 
-const string ALPHABETa = "abcdefghijklmnopqrstuvwxyz";
-const string ALPHABETA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
 int main(int argc, string argv[])
 {
     if (argc != 2)
@@ -20,7 +17,7 @@ int main(int argc, string argv[])
 
     if (!only_alphas(argv[1]))
     {
-        printf("the key can only contain letters");
+        printf("the key can only contain letters\n");
 
         return 1;
     }
@@ -54,7 +51,7 @@ int main(int argc, string argv[])
     {
         if (islower(key[i]))
         {
-            key[i] = key[i] - 32;
+            key[i] = toupper(key[i]);
         }
     }
     printf("Ciphertext: ");
