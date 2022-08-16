@@ -62,9 +62,9 @@ int main(int argc, string argv[])
 
         for (int j = 0; j < candidate_count; j++)
         {
-            string name = get_string("Rank %i: ", j + 1);
+            string candidates_name = get_string("Rank %i: ", j + 1);
 
-            if (!vote(i, j, name))
+            if (!vote(i, j, candidates_name))
             {
                 printf("Invalid vote.\n");
 
@@ -116,7 +116,8 @@ bool vote(int voter, int rank, string name)
     for (int i = 0; i < candidate_count; i++)
     {
 
-        if (strcmp(candidates[i].name, name) == 0)
+        bool candidateIsCandidateToVote = strcmp(candidates[i].name, name) == 0;
+        if (candidateIsCandidateToVote)
         {
             preferences[voter][rank] = i;
             return true;
