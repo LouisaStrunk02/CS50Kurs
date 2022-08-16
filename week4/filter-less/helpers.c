@@ -1,7 +1,6 @@
 #include "helpers.h"
 #include <math.h>
 
-// Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++)
@@ -21,7 +20,6 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-// Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++)
@@ -55,7 +53,6 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-// Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++)
@@ -70,7 +67,6 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-// Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE copy[height][width];
@@ -86,13 +82,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            float red, green, blue;
+            int red, green, blue;
             red = 0;
             green = 0;
             blue = 0;
-            int pixelcounter = 0;
+            float pixelcounter = 0.00;
 
-            for (int x = -1; i < 2; x++)
+            for (int x = -1; x < 2; x++)
             {
                 for (int y = -1; y < 2; y++)
                 {
@@ -124,5 +120,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = copy[i][j].rgbtBlue;
         }
     }
+
     return;
 }
