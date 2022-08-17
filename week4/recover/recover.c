@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <cs50.h>
 typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
@@ -31,7 +32,8 @@ int main(int argc, char *argv[])
 
     while (fread(buffer, sizeof(char), 512, input_file))
     {
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        bool isStartOfJPEG = (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0);
+        if (isStartOfJPEG)
         {
             sprintf(filename, "%03i.jpg", image_counter);
             output_file = fopen(filename, "w");
