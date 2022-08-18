@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include <math.h>
+#include <cs50.h>
 
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -62,7 +63,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     int currentX = i + x;
                     int currentY = j + y;
 
-                    if (currentX < 0 || currentX >= height || currentY < 0 || currentY >= width)
+                    bool pixelNonexistent = currentX < 0 || currentX >= height || currentY < 0 || currentY >= width;
+                    if (pixelNonexistent)
                     {
                         continue;
                     }
@@ -119,7 +121,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int y = 0; y < 3; y++)
                 {
-                    if (i - 1 + x < 0 || i - 1 + x > height - 1 || j - 1 + y < 0 || j - 1 + y > width - 1)
+                    bool pixelNonexistent = i - 1 + x < 0 || i - 1 + x > height - 1 || j - 1 + y < 0 || j - 1 + y > width - 1;
+                    if (pixelNonexistent)
                     {
                         continue;
                     }
