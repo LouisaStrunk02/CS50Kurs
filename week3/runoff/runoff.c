@@ -115,8 +115,8 @@ bool vote(int voter, int rank, string name)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-
-        if (strcmp(candidates[i].name, name) == 0)
+        bool CandidateIsCandidateToVote = strcmp(candidates[i].name, name) == 0;
+        if (CandidateIsCandidateToVote)
         {
             preferences[voter][rank] = i;
             return true;
@@ -132,7 +132,8 @@ void tabulate(void)
     {
         for (int j = 0; i < candidate_count; j++)
         {
-            if (!candidates[preferences[i][j]].eliminated)
+            bool CandidateIsEliminated = candidates[preferences[i][j]].eliminated;
+            if (!CandidateIsEliminated)
             {
                 candidates[preferences[i][j]].votes++;
                 break;
@@ -190,12 +191,7 @@ bool is_tie(int min)
         }
     }
 
-    if (eliminate == counter)
-    {
-        return true;
-    }
-
-    return false;
+    return eliminate == counter;
 }
 
 void eliminate(int min)
