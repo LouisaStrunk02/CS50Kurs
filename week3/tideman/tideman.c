@@ -92,7 +92,8 @@ bool vote(int rank, string name, int ranks[])
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(candidates[i], name) == 0)
+        bool CandidateIsCandidateToVote = strcmp(candidates[i], name) == 0;
+        if (CandidateIsCandidateToVote)
         {
             ranks[rank] = i;
 
@@ -145,7 +146,8 @@ void sort_pairs(void)
     {
         for (int j = i + 1; j < pair_count; j++)
         {
-            if (preferences[pairs[i].winner][pairs[i].loser] < preferences[pairs[j].winner][pairs[j].loser])
+            bool wrongOrder = preferences[pairs[i].winner][pairs[i].loser] < preferences[pairs[j].winner][pairs[j].loser];
+            if (wrongOrder)
             {
                 pair temp = pairs[i];
                 pairs[i] = pairs[j];
