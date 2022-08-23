@@ -30,17 +30,17 @@ def main():
         used_Cardnumber = used_Cardnumber // 10
 
     if sum % 10 == 0:
-        isAmericanExpress = length == 15 and (cardnumber // (10**13) == 34 or  cardnumber // (10**13) == 37)
-        isMasterCard = length == 16 and (cardnumber // (10**14) == 51 or  cardnumber // (10**14) == 52 or cardnumber // (10**14) == 53 or cardnumber // (10**14) == 54 or cardnumber // (10**14) == 55)
-        isVISA = (length == 16 and (cardnumber // (10**15) == 4)) or (length == 13 and (cardnumber // (10**12) == 4))
-        
-        if isAmericanExpress:      
+        is_AmericanExpress = length == 15 and (cardnumber // (10**13) == 34 or  cardnumber // (10**13) == 37)
+        is_MasterCard = length == 16 and (cardnumber // (10**14) == 51 or  cardnumber // (10**14) == 52 or cardnumber // (10**14) == 53 or cardnumber // (10**14) == 54 or cardnumber // (10**14) == 55)
+        is_VISA = (length == 16 and (cardnumber // (10**15) == 4)) or (length == 13 and (cardnumber // (10**12) == 4))
+
+        if is_AmericanExpress:      
              print("AMEX")
             
-        elif isMasterCard:
+        elif is_MasterCard:
             print("MASTERCARD")
             
-        elif isVISA:
+        elif is_VISA:
             print("VISA")
 
         else:
