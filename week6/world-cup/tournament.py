@@ -49,7 +49,6 @@ def simulate_round(teams):
 
 
 def simulate_tournament(teams):
-    # TODO
     while len(teams) > 1:
         teams = simulate_round(teams)
 
