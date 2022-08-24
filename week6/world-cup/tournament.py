@@ -10,15 +10,19 @@ def main():
         sys.exit("Usage: python tournament.py FILENAME")
 
     teams = []
+
     with open(sys.argv[1]) as file:
         reader = csv.DictReader(file)
+
         for team in reader:
             team["rating"] = int(team["rating"])
             teams.append(team)    
 
     counts = {}
+
     for i in range(N):
         winner = simulate_tournament(teams)
+
         if winner in counts:
             counts[winner] += 1
         else:
@@ -29,6 +33,7 @@ def main():
 
 
 def simulate_game(team1, team2):
+
     rating1 = team1["rating"]
     rating2 = team2["rating"]
     probability = 1 / (1 + 10 ** ((rating2 - rating1) / 600))
@@ -37,9 +42,11 @@ def simulate_game(team1, team2):
 
 
 def simulate_round(teams):
+
     winners = []
 
     for i in range(0, len(teams), 2):
+
         if simulate_game(teams[i], teams[i + 1]):
             winners.append(teams[i])
         else:
@@ -49,12 +56,11 @@ def simulate_round(teams):
 
 
 def simulate_tournament(teams):
+
     while len(teams) > 1:
         teams = simulate_round(teams)
 
     return teams[0]["team"]
-
-
 
 if __name__ == "__main__":
     main()

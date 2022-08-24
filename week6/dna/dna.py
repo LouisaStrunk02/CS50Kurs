@@ -29,7 +29,7 @@ def main():
         match_counter = 0
         
         for subsequence in subsequences:
-            
+
             if int(profile[subsequence]) == longest_run[subsequence]:
                 match_counter += 1
 
@@ -54,13 +54,11 @@ def longest_match(sequence, subsequence):
         count = 0
 
         while True:
-
             start = i + count * subsequence_length
             end = start + subsequence_length
 
             if sequence[start:end] == subsequence:
                 count += 1
-            
             else:
                 break
         

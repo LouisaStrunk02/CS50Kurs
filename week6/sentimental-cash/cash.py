@@ -17,8 +17,11 @@ def main():
     print(coins)
 
 def get_cents():
+
     dollars = -1
+
     while dollars < 0:
+
         try:
             dollars = float(input("Change owed: "))
         except ValueError:

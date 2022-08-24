@@ -11,34 +11,39 @@ def main():
 
     if grade < 1:
         print("Before Grade 1")
-
     elif grade >= 16:
         print("Grade 16+")
-    
     else:
         print("Grade: " + str(grade))
 
 def count_letters(text):
+
     number_of_letters = 0
 
     for i in range(len(text)):
+
         if text[i].isalpha():
             number_of_letters += 1
     
     return number_of_letters
 
 def count_words(text):
+
     number_of_words = 1
 
     for i in range(len(text)):
+
         if text[i] == ' ':
             number_of_words += 1
     
     return number_of_words
 
 def count_sentences(text):
+
     number_of_sentences = 0
+
     for i in range(len(text)):
+
         if text[i] == '.' or text[i] == '!' or text[i] == '?':
             number_of_sentences += 1
 
