@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
     if (argc != 4)
     {
         printf("Usage: ./volume input.wav output.wav factor\n");
+
         return 1;
     }
 
@@ -16,6 +17,7 @@ int main(int argc, char *argv[])
     if (input == NULL)
     {
         printf("Could not open file.\n");
+
         return 1;
     }
 
@@ -23,6 +25,7 @@ int main(int argc, char *argv[])
     if (output == NULL)
     {
         printf("Could not open file.\n");
+
         return 1;
     }
 

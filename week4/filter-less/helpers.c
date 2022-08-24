@@ -18,6 +18,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = average;
         }
     }
+
     return;
 }
 
@@ -51,6 +52,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = sepiaBlue;
         }
     }
+
     return;
 }
 
@@ -65,6 +67,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][width - (j + 1)] = temp;
         }
     }
+
     return;
 }
 
