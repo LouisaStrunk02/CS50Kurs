@@ -63,8 +63,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     int currentX = i + x;
                     int currentY = j + y;
 
-                    bool pixelNonexistent = currentX < 0 || currentX >= height || currentY < 0 || currentY >= width;
-                    if (pixelNonexistent)
+                    bool pixel_Nonexistent = currentX < 0 || currentX >= height || currentY < 0 || currentY >= width;
+                    if (pixel_Nonexistent)
                     {
                         continue;
                     }
@@ -121,8 +121,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int y = 0; y < 3; y++)
                 {
-                    bool pixelNonexistent = i - 1 + x < 0 || i - 1 + x > height - 1 || j - 1 + y < 0 || j - 1 + y > width - 1;
-                    if (pixelNonexistent)
+                    bool pixel_Nonexistent = i - 1 + x < 0 || i - 1 + x > height - 1 || j - 1 + y < 0 || j - 1 + y > width - 1;
+                    if (pixel_Nonexistent)
                     {
                         continue;
                     }

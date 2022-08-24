@@ -96,8 +96,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     int currentX = i + x;
                     int currentY = j + y;
 
-                    bool pixelNonexistent = currentX < 0 || currentX >= height || currentY < 0 || currentY >= width;
-                    if (pixelNonexistent)
+                    bool pixel_Nonexistent = currentX < 0 || currentX >= height || currentY < 0 || currentY >= width;
+                    if (pixel_Nonexistent)
                     {
                         continue;
                     }

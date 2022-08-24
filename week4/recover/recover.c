@@ -32,8 +32,8 @@ int main(int argc, char *argv[])
 
     while (fread(buffer, sizeof(char), 512, input_file))
     {
-        bool isStartOfJPEG = (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0);
-        if (isStartOfJPEG)
+        bool is_Start_Of_JPEG = (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0);
+        if (is_Start_Of_JPEG)
         {
             sprintf(filename, "%03i.jpg", image_counter);
             output_file = fopen(filename, "w");
