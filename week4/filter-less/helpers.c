@@ -18,6 +18,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = average;
         }
     }
+
     return;
 }
 
@@ -51,6 +52,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = sepiaBlue;
         }
     }
+
     return;
 }
 
@@ -65,6 +67,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][width - (j + 1)] = temp;
         }
     }
+
     return;
 }
 
@@ -87,7 +90,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             red = 0;
             green = 0;
             blue = 0;
-            float pixelcounter = 0.00;
+            float pixelCounter = 0.00;
 
             for (int x = -1; x < 2; x++)
             {
@@ -96,20 +99,22 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     int currentX = i + x;
                     int currentY = j + y;
 
-                    bool pixelNonexistent = currentX < 0 || currentX >= height || currentY < 0 || currentY >= width;
-                    if (pixelNonexistent)
+                    bool pixelNonExistent = currentX < 0 || currentX >= height || currentY < 0 || currentY >= width;
+                    if (pixelNonExistent)
                     {
                         continue;
                     }
+
                     red += image[currentX][currentY].rgbtRed;
                     green += image[currentX][currentY].rgbtGreen;
                     blue += image[currentX][currentY].rgbtBlue;
-                    pixelcounter++;
+                    pixelCounter++;
                 }
             }
-            copy[i][j].rgbtRed = round(red / pixelcounter);
-            copy[i][j].rgbtGreen = round(green / pixelcounter);
-            copy[i][j].rgbtBlue = round(blue / pixelcounter);
+
+            copy[i][j].rgbtRed = round(red / pixelCounter);
+            copy[i][j].rgbtGreen = round(green / pixelCounter);
+            copy[i][j].rgbtBlue = round(blue / pixelCounter);
         }
     }
 

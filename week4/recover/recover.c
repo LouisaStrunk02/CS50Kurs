@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     unsigned char buffer[512];
 
-    int image_counter = 0;
+    int imageCounter = 0;
 
     FILE *output_file = NULL;
 
@@ -32,12 +32,12 @@ int main(int argc, char *argv[])
 
     while (fread(buffer, sizeof(char), 512, input_file))
     {
-        bool isStartOfJPEG = (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0);
-        if (isStartOfJPEG)
+        bool isStartOfJpeg = (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0);
+        if (isStartOfJpeg)
         {
-            sprintf(filename, "%03i.jpg", image_counter);
+            sprintf(filename, "%03i.jpg", imageCounter);
             output_file = fopen(filename, "w");
-            image_counter++;
+            imageCounter++;
         }
 
         if (output_file != NULL)
@@ -45,6 +45,7 @@ int main(int argc, char *argv[])
             fwrite(buffer, sizeof(char), 512, output_file);
         }
     }
+
     free(filename);
     fclose(output_file);
     fclose(input_file);

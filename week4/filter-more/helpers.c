@@ -18,6 +18,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = average;
         }
     }
+
     return;
 }
 
@@ -32,6 +33,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][width - (j + 1)] = temp;
         }
     }
+
     return;
 }
 
@@ -54,7 +56,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             red = 0;
             green = 0;
             blue = 0;
-            float pixelcounter = 0.00;
+            float pixelCounter = 0.00;
 
             for (int x = -1; x < 2; x++)
             {
@@ -63,20 +65,20 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     int currentX = i + x;
                     int currentY = j + y;
 
-                    bool pixelNonexistent = currentX < 0 || currentX >= height || currentY < 0 || currentY >= width;
-                    if (pixelNonexistent)
+                    bool pixelNonExistent = currentX < 0 || currentX >= height || currentY < 0 || currentY >= width;
+                    if (pixelNonExistent)
                     {
                         continue;
                     }
                     red += image[currentX][currentY].rgbtRed;
                     green += image[currentX][currentY].rgbtGreen;
                     blue += image[currentX][currentY].rgbtBlue;
-                    pixelcounter++;
+                    pixelCounter++;
                 }
             }
-            copy[i][j].rgbtRed = round(red / pixelcounter);
-            copy[i][j].rgbtGreen = round(green / pixelcounter);
-            copy[i][j].rgbtBlue = round(blue / pixelcounter);
+            copy[i][j].rgbtRed = round(red / pixelCounter);
+            copy[i][j].rgbtGreen = round(green / pixelCounter);
+            copy[i][j].rgbtBlue = round(blue / pixelCounter);
         }
     }
 
@@ -89,6 +91,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = copy[i][j].rgbtBlue;
         }
     }
+
     return;
 }
 
@@ -121,8 +124,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int y = 0; y < 3; y++)
                 {
-                    bool pixelNonexistent = i - 1 + x < 0 || i - 1 + x > height - 1 || j - 1 + y < 0 || j - 1 + y > width - 1;
-                    if (pixelNonexistent)
+                    bool pixelNonExistent = i - 1 + x < 0 || i - 1 + x > height - 1 || j - 1 + y < 0 || j - 1 + y > width - 1;
+                    if (pixelNonExistent)
                     {
                         continue;
                     }
@@ -135,6 +138,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     blueY += image[i - 1 + x][j - 1 + y].rgbtBlue * Gy[x][y];
                 }
             }
+
             int red = round(sqrt((redX * redX) + (redY * redY)));
             int green = round(sqrt((greenX * greenX) + (greenY * greenY)));
             int blue = round(sqrt((blueX * blueX) + (blueY * blueY)));
@@ -167,5 +171,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = copy[i][j].rgbtBlue;
         }
     }
+
     return;
 }
