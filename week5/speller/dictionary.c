@@ -25,8 +25,8 @@ bool check(const char *word)
 
     while (cursor != NULL)
     {
-        bool wordIsInDictionary = (strcasecmp(cursor->word, word) == 0);
-        if (!wordIsInDictionary)
+        bool word_is_in_dictionary = (strcasecmp(cursor->word, word) == 0);
+        if (!word_is_in_dictionary)
         {
             cursor = cursor->next;
         }
@@ -54,6 +54,7 @@ bool load(const char *dictionary)
 
         return false;
     }
+
     char new_word[LENGTH + 1];
 
     while (fscanf(file, "%s", new_word) != EOF)
@@ -70,6 +71,7 @@ bool load(const char *dictionary)
         table[index] = new_node;
         word_counter++;
     }
+
     fclose(file);
 
     return true;
@@ -92,6 +94,7 @@ bool unload(void)
             cursor = cursor->next;
             free(temp);
         }
+
         if (cursor == NULL)
         {
             return true;
