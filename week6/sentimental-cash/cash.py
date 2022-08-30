@@ -31,19 +31,20 @@ def get_cents():
 
     return cents
 
-def calculate_quarters(cents):
+def calculate_quarters(cents: int) -> int:
     quarters = cents // 25
 
     return quarters
 
-def calculate_dimes(cents):
+def calculate_dimes(cents: int) -> int:
     dimes = cents // 10
 
     return dimes
 
-def calculate_nickels(cents):
+def calculate_nickels(cents: int) -> int:
     nickels = cents // 5
 
     return nickels
 
-main()
+if __name__ == "__main__":
+    main()

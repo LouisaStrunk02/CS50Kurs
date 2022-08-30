@@ -1,17 +1,22 @@
 def main():
-    cardnumber = int(input("Cardnumber: "))
-    used_Cardnumber = cardnumber
+    try:
+        cardnumber = int(input("Cardnumber: "))
+    except ValueError:
+        print("Your Cardnumber can only contain numbers")
+        exit()
+
+    used_cardnumber = cardnumber
     remainder = 0
     multiplied_remainder = 0
-    evenposition = False
+    even_position = False
     sum = 0
     length = 0
 
-    while used_Cardnumber > 0:
+    while used_cardnumber > 0:
         length += 1
-        remainder = used_Cardnumber % 10
+        remainder = used_cardnumber % 10
 
-        if evenposition:
+        if even_position:
             multiplied_remainder = remainder * 2
 
             if multiplied_remainder > 9:
@@ -26,8 +31,8 @@ def main():
         else:
             sum += remainder
         
-        evenposition = not evenposition
-        used_Cardnumber = used_Cardnumber // 10
+        even_position = not even_position
+        used_cardnumber = used_cardnumber // 10
 
     if sum % 10 == 0:
         is_AmericanExpress = length == 15 and (cardnumber // (10**13) == 34 or  cardnumber // (10**13) == 37)
@@ -48,5 +53,6 @@ def main():
         
     else:
         print("INVALID\n")
-    
-main() 
+
+if __name__ == "__main__":    
+    main() 

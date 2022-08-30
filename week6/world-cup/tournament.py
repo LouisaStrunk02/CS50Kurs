@@ -16,7 +16,7 @@ def main():
 
         for team in reader:
             team["rating"] = int(team["rating"])
-            teams.append(team)    
+            teams.append(team)
 
     counts = {}
 
@@ -32,7 +32,7 @@ def main():
         print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
 
-def simulate_game(team1, team2):
+def simulate_game(team1: str, team2: str) -> int:
 
     rating1 = team1["rating"]
     rating2 = team2["rating"]
@@ -41,7 +41,7 @@ def simulate_game(team1, team2):
     return random.random() < probability
 
 
-def simulate_round(teams):
+def simulate_round(teams: list) -> list:
 
     winners = []
 
@@ -55,7 +55,7 @@ def simulate_round(teams):
     return winners
 
 
-def simulate_tournament(teams):
+def simulate_tournament(teams: list) -> str:
 
     while len(teams) > 1:
         teams = simulate_round(teams)

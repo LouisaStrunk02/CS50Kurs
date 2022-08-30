@@ -10,7 +10,7 @@ def main():
 
     database = []
 
-    with open (argv[1], "r") as file:
+    with open(argv[1], "r") as file:
         reader = csv.DictReader(file)
 
         for name in reader:
@@ -43,7 +43,7 @@ def main():
     return
 
 
-def longest_match(sequence, subsequence):
+def longest_match(sequence: str, subsequence: str) -> int:
 
     longest_run = 0
     subsequence_length = len(subsequence)
@@ -66,4 +66,5 @@ def longest_match(sequence, subsequence):
 
     return longest_run
 
-main()
+if __name__ == "__main__":
+    main()

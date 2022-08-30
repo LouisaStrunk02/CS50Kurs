@@ -16,37 +16,19 @@ def main():
     else:
         print("Grade: " + str(grade))
 
-def count_letters(text):
+def count_letters(text: str) -> int:
 
-    number_of_letters = 0
+    return len([letter for letter in text if letter.isalpha()])
 
-    for i in range(len(text)):
+def count_words(text: str) -> int:
 
-        if text[i].isalpha():
-            number_of_letters += 1
+    return len(text.split())
+
+def count_sentences(text: str) -> int:
+
+    sentences = len(text.split(". " or "! " or "? "))
     
-    return number_of_letters
+    return sentences
 
-def count_words(text):
-
-    number_of_words = 1
-
-    for i in range(len(text)):
-
-        if text[i] == ' ':
-            number_of_words += 1
-    
-    return number_of_words
-
-def count_sentences(text):
-
-    number_of_sentences = 0
-
-    for i in range(len(text)):
-
-        if text[i] == '.' or text[i] == '!' or text[i] == '?':
-            number_of_sentences += 1
-
-    return  number_of_sentences
-
-main()
+if __name__ == "__main__":
+    main()
