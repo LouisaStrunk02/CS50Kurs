@@ -26,9 +26,10 @@ def count_words(text: str) -> int:
 
 def count_sentences(text: str) -> int:
 
-    sentences = len(text.split(". " or "! " or "? "))
+    text = text.replace("!", ".")
+    text = text.replace("?", ".")
     
-    return sentences
+    return len(text.split(". "))
 
 if __name__ == "__main__":
     main()
