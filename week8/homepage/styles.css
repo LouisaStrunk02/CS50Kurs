@@ -44,7 +44,7 @@ footer {
     bottom: 3%;
     float: left;
     width: 100%;
-    font-size: 0.5em;
+    font-size: 0.7em;
 }
 
 aside {
@@ -52,14 +52,14 @@ aside {
     color: rgb(117, 130, 131);
     position: absolute;
     size: fixed;
-    top: 6em;
+    top: 8em;
     margin-left: 0;
     margin-right: 80%;
     float: left;
     width: 15%;
     height: 81.45%;
     text-align: left;
-    font-size: 2em;
+    font-size: 1.5em;
     padding: 0em 0em;
 }
 
@@ -76,7 +76,7 @@ aside {
     position: absolute;
     bottom: 3em;
     text-align: center;
-    padding-left: 2em;
+    padding-left: 3.5em;
 }
 
 .button {
@@ -84,7 +84,7 @@ aside {
     color: rgb(0, 0, 0);
     height: auto;
     width: auto;
-    font-size: 0.5em;
+    font-size: 1em;
     position: fixed;
     bottom: 2em;
     left: 4em;
@@ -98,6 +98,18 @@ aside {
     left: 5%;
     size: fixed;
     height: 100%;
+    width: 50%;
+    z-index: 1;
+}
+
+#Player {
+    background-color: #11bfc835;
+    color:rgb(0, 0, 0);
+    position: absolute;
+    top: 16em;
+    left: 5%;
+    size: fixed;
+    height: 50%;
     width: 50%;
 }
 
@@ -135,6 +147,16 @@ aside {
     size: fixed;
     height: 18em;
     width: 30em;
+}
+
+.Player {
+    position: absolute;
+    top: 70%;
+    right: 7em;
+    size: fixed;
+    height: 30em;
+    width: 50em;
+    z-index: 0;
 }
 
 .stadium {
