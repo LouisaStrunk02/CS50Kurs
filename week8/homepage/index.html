@@ -8,25 +8,41 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <link href="name.js" rel="functionsheet">
     <title>Homepage - Louisa </title>
+    <script>
+         document.addEventListener('DOMContentLoaded', function () {
+
+            document.querySelector("#submit").addEventListener("click", function () {
+                var input = document.getElementById("name").value;
+                document.querySelector("#feedback1").innerHTML = "Hello, " + input + ". Thank you for visiting my homepage :) My name is Louisa and i like playing soccer so this page is about women soccer.";
+                });
+         });
+    </script>
 </head>
 
 <body>
     <header>
-        <h1>My first own Webpage</h1>
+        <h1>Welcome</h1>
     </header>
     <main>
-        <h3>Welcome</h3>
+        <name class="name">
+            <input id="name" placeholder="What's your name?" type="text"></input>
+            <button id="submit">Submit</button>
+            <p id="feedback1"></p>
+        </name>
+        <img class="stadium" alt="Wembley Stadium" src="Wembley.jpg">
     </main>
-    <footer>
-        <p>Copyright &#169; Louisa Strunk</p>
-    </footer>
     <aside>
-        <li><a class="link" href="example.html">Example</a></li>
-        <li><a class="link" href="example1.html">Example1</a></li>
-        <li><a class="link" href="example2.html">Example2</a></li>
-        <li><a class="link" href="example3.html">Example3</a></li>
+        <p><a class="link" href="EMWinner.html">EM Winner</a></p>
+        <p><a class="link" href="WMWinner.html">WM Winner</a></p>
+        <p><a class="link" href="example2.html">Example2</a></p>
+        <p><a class="linkedin" href="https://de.linkedin.com/in/louisa-strunk-443437247" targt="_blank">LinkedIn</a></p>
+        <footer>
+            <p>Copyright &#169; Louisa Strunk</p>
+        </footer>
     </aside>
 </body>
 
