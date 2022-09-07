@@ -1,0 +1,172 @@
+header {
+  background-color: #11bfc896;
+  color: rgb(0, 0, 0);
+  padding: 4em 1em;
+  text-align: center;
+  size: fixed;
+  height: 12em;
+  width: 100%;
+  position: absolute;
+  right: 0;
+}
+
+main {
+  background-color: rgba(162, 232, 238, 0);
+  color: black;
+  position: absolute;
+  size: fixed;
+  padding: 5em 5em;
+  text-align: center;
+  margin-left: 15%;
+  float: right;
+  width: 85%;
+  height: 70%;
+}
+
+.name {
+  position: absolute;
+  top: 10%;
+  right: 2%;
+  padding: 10em 10em;
+  text-align: center;
+  background-color: rgba(43, 211, 226, 0);
+  width: 50em;
+  font-size: 2em;
+  z-index: 2;
+}
+
+footer {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  size: fixed;
+  text-align: center;
+  margin-right: 80%;
+  bottom: 3%;
+  float: left;
+  width: 100%;
+  font-size: 0.7em;
+}
+
+aside {
+  background-color: rgb(0, 0, 0);
+  color: rgb(117, 130, 131);
+  position: absolute;
+  size: fixed;
+  top: 8em;
+  margin-left: 0;
+  margin-right: 80%;
+  float: left;
+  width: 15%;
+  height: 81.45%;
+  text-align: left;
+  font-size: 1.5em;
+  padding: 0em 0em;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(117, 130, 131);
+  text-align: center;
+  padding-left: 2em;
+}
+
+.linkedin {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  bottom: 3em;
+  text-align: center;
+  padding-left: 3.5em;
+}
+
+.button {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  height: auto;
+  width: auto;
+  font-size: 1em;
+  position: fixed;
+  bottom: 2em;
+  left: 4em;
+}
+
+.table {
+  background-color: #11bfc835;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 16em;
+  left: 5%;
+  size: fixed;
+  height: 100%;
+  width: 50%;
+  z-index: 1;
+}
+
+#Player {
+  background-color: #11bfc835;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 16em;
+  left: 5%;
+  size: fixed;
+  height: 50%;
+  width: 50%;
+}
+
+.EMtrophy {
+  position: absolute;
+  top: 16em;
+  right: 7em;
+  size: fixed;
+  height: 20em;
+  width: 30em;
+}
+
+.EMball {
+  position: absolute;
+  top: 45em;
+  right: 7em;
+  size: fixed;
+  height: 15em;
+  width: 25em;
+}
+
+.WMtrophy {
+  position: absolute;
+  top: 37em;
+  right: 2em;
+  size: fixed;
+  height: 25em;
+  width: 40em;
+}
+
+.WMball {
+  position: absolute;
+  top: 16em;
+  right: 7em;
+  size: fixed;
+  height: 18em;
+  width: 30em;
+}
+
+.Player {
+  position: absolute;
+  top: 70%;
+  right: 7em;
+  size: fixed;
+  height: 30em;
+  width: 50em;
+  z-index: 0;
+}
+
+.stadium {
+  opacity: 0.1;
+  position: absolute;
+  size: fixed;
+  right: 0;
+  bottom: 0;
+  top: 12em;
+  width: 100%;
+  height: 116%;
+  z-index: 1;
+}
